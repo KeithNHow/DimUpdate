@@ -10,13 +10,13 @@
 ///        Dim Code = Dimension table
 ///        Only Dim Set Id does not belong to another table
 /// </summary>
-pageextension 51700 "KNH Sales Order" extends "Sales Order"
+pageextension 51700 "KNH_SalesOrder" extends "Sales Order"
 {
     actions
     {
         addfirst(Processing)
         {
-            action("KNH DimTest")
+            action("KNH_KNH DimTest")
             {
                 Caption = 'Create Dimensions';
                 ApplicationArea = Basic, Suite;
