@@ -2,21 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Keith-Notebook",
+            "name": "Microsoft Sandbox",
             "request": "launch",
             "type": "al",
-            "environmentType": "OnPrem",
-            "server": "http://keith-notebook",
-            "serverInstance": "BC200",
-            "authentication": "Windows",
-            "startupObjectId": 9006,
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox",
+            "startupObjectId": 2500,
             "startupObjectType": "Page",
-            "port": 7649,
-            "breakOnError": true,
+            "breakOnError": "All",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "tenant": "default"
+            "tenant": "4a94f826-0a72-47e5-869d-d554fa01b7ec"
         }
     ]
 }
