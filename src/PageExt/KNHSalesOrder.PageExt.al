@@ -1,10 +1,6 @@
-/* 
-<summary>
-PageExtension KNH Sales Order (ID 51700) extends Record Sales Order.
-Dimension table = 9 fields, Dim Value table = 13 fields , Dim Set Entry = 7 fields 
-Action on Sales Order page to create Dimension, Dim Value and Dim Set Entry records based on the Dim Set ID on the Sales Order header. This is sample code to illustrate how to create dimension related records from a sales order page extension. The actual implementation may vary based on the specific requirements and design considerations.
-</summary> 
-*/
+///<summary>
+///PageExtension extends the Sales Order page. It adds an action to the processing tab that will create dimensions, dimension values, and dimension set entries.
+///</summary> 
 pageextension 51700 KNHSalesOrder extends "Sales Order"
 {
     actions

@@ -1,0 +1,2 @@
+# Summary
+This extension consists only of a page extension to the Sales Order page. It extends the Sales Order page. It adds an action to the processing tab that will create dimensions, dimension values, and dimension set entries.
