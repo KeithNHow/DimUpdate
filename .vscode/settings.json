@@ -23,8 +23,20 @@
     {
         "generateReportLayout": true
     },
-
-    "CRS.ObjectNamePrefix": "KNH_",
+    
+    "alOutline.codeCleanupActions": [
+        "AddToolTips",
+        "FixKeywordsCase",
+        "FixIdentifiersCase",
+        "SortVariables",
+        "AddApplicationAreas",
+        "SortTableFields",
+        "AddMissingParentheses",
+        "RemoveBeginEnd",
+        "RemoveUnusedVariables"
+    ],
+    
+    //"CRS.ObjectNamePrefix": "KNH_",
     "CRS.DisableDefaultAlSnippets": false,
     "CRS.OnSaveAlFileAction": "Rename",
     "CRS.FileNamePattern": "<ObjectName>.<ObjectTypeShortPascalCase>.al",

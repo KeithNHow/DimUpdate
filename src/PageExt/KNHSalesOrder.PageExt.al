@@ -1,20 +1,15 @@
-/// <summary>
-/// PageExtension KNH Sales Order (ID 51700) extends Record Sales Order.
-/// Dimension table = 9 fields (Code, Code Name, Code Caption, Filter Caption, Description, Blocked, 
-///                   Consolidation Date, Map-to IC Dim code, Last Mod DT)
-/// Dim Value table = 13 fields (Dim Code, Code, Name, Dim Value Type, Totlalling, Blocked, Consol Code, Indent, Global Dim No., 
-///                    Map-to IC Dim Code, Map-to IC dim Value Code, dim Value Id, Id, Last Mod DT, Dim Id)
-/// Dim Set Entry = 7 fields (Dim Set Id, Dim Code, Dim Value Code, Dim Value ID, Dim Name, Dim Value Name, Global Dim No.)
-/// Notes: Global Dim No. = General Ledger Setup table
-///        Dim Value code, Dim Value Id, Dim Value Name = Dim Value table
-///        Dim Code = Dimension table
-///        Only Dim Set Id does not belong to another table
-/// </summary>
-pageextension 51700 "KNH_SalesOrder" extends "Sales Order"
+/* 
+<summary>
+PageExtension KNH Sales Order (ID 51700) extends Record Sales Order.
+Dimension table = 9 fields, Dim Value table = 13 fields , Dim Set Entry = 7 fields 
+Action on Sales Order page to create Dimension, Dim Value and Dim Set Entry records based on the Dim Set ID on the Sales Order header. This is sample code to illustrate how to create dimension related records from a sales order page extension. The actual implementation may vary based on the specific requirements and design considerations.
+</summary> 
+*/
+pageextension 51700 KNHSalesOrder extends "Sales Order"
 {
     actions
     {
-        addfirst(Processing)
+        addfirst(processing)
         {
             action("KNH_KNH DimTest")
             {
@@ -22,15 +17,14 @@ pageextension 51700 "KNH_SalesOrder" extends "Sales Order"
                 ApplicationArea = Basic, Suite;
                 ToolTip = 'Create Dimensions.';
                 Image = DimensionSets;
-                //assumption that SH record contain a dim set id value
 
-                trigger OnAction() //create new dim value rec and SH Dim Set Entry rec
+                trigger OnAction()
                 var
-                    Dimension: Record "Dimension";
-                    DimensionValue: Record "Dimension Value";
+                    Dimension: Record Dimension;
                     DimensionSetEntry: Record "Dimension Set Entry";
-                    DimValue: array[10] of Code[20];
+                    DimensionValue: Record "Dimension Value";
                     DimCode: array[10] of Code[20];
+                    DimValue: array[10] of Code[20];
                     I: Integer;
                 begin
                     DimCode[1] := 'PROJECT';
